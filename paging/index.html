@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="css/paging.css"/>
+		<title></title>
+	</head>
+	<body>
+		<h1>分页1</h1>
+		<div id="page1"></div>
+		<h1>分页2</h1>
+		<div id="page2"></div>
+		<h1>分页3</h1>
+		<div id="page3"></div>
+	</body>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/paging.js"></script>
+	<script>
+		//分页1
+		$('#page1').initPaging({
+			total:99,  //分页的总数
+			num:50,  //同时显示多少页的数量
+			align:'left',  //对齐方式
+			page:"1",   //默认显示的页数
+			changePage:function(page){ //页数改变的回调
+				console.log(page);
+			}
+		})
+		
+		//分页2
+		$("#page2").initPaging({
+			total:10,
+			num:7,
+			align:'center',
+			page:"5"
+		})
+		
+		//分页3
+		$('#page3').initPaging({
+			total:66,
+			num:"10",
+			page:"10",
+			align:"right",
+			changePage:function(page){
+				console.log(page);
+			}
+		})
+		
+		
+	</script>
+</html>
